@@ -24,17 +24,14 @@ https://dev.mysql.com/downloads/mysql/
 If you don't already have MySQL Workbench installed on your machine please install from:
 https://dev.mysql.com/downloads/workbench/
 
-Open SQL workbench and ensure you can create a new database (choose or add an existing connection). Once you have a connection, add the username and password credentials to the `db.js` file.
+Open SQL workbench and ensure you can create a new database (choose or add an existing connection). Once you have a connection, add the username and password credentials to the `.env` file.
 
 ```
-var connection = mysql.createConnection({
-    host:'localhost',
-    user:'<enter your username here>',
-    password:'<enter your password here>,
-    database:'my-library'
-});
+MYSQL_USER="<MySQL_username>"
+MYSQL_PASSWORD="<MySQL_password>"
 ```
-On MySQL Workbench, click on the database icon - “Create a new schema” at the top and make the schema name `my-library`.
+
+On MySQL Workbench, click on the database icon - “Create a new schema” at the top and make the schema name `quiz-manager`.
 
 ### IDE
 I have used Visual Studio Code as my IDE but you can use the IDE you feel most comfortable with.
