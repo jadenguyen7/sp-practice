@@ -2,20 +2,27 @@ var express = require('express');
 var userService = require("../services/userService");
 var router = express.Router();
 require("dotenv").config()
-var jwt = require('jsonwebtoken');
+var jwt = require('jsonwebtoken')
 
-router.get('/login', function(req, res, next) {
-  res.render('users/login');
+router.get("/", async (req, res, next) => {
+  res.send("users");
 });
 
-router.post('/', function(req, res) {
-  function onSuccess(result) {
-      res.redirect('/users');
-  }
 
-  userService.createUser(req.body, onSuccess)
-});
+// when you go two path http://localhost:3000/users/login - render 'users/login.hbs'
+// router.get('/login', function(req, res, next) {
+//   res.render('users/login.hbs');
+// });
 
+// router.post('/', function(req, res) {
+//   function onSuccess(result) {
+//       res.redirect('/users');
+//   }
+
+//   userService.createUser(req.body, onSuccess)
+// });
+
+// users/log
 router.post('/login', function(req, res, next) {
   function onSuccess(success, user) {
     if (!success) {
