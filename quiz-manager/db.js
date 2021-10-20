@@ -23,4 +23,9 @@ function query(sql, onResult) {
     });
 }
 
+function end() {
+    connection.end();
+}
+
 module.exports.query = query;
+module.exports.end = end;

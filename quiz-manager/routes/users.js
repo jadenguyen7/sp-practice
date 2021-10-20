@@ -1,6 +1,8 @@
 var express = require('express');
 var userService = require("../services/userService");
 var router = express.Router();
+require("dotenv").config()
+var jwt = require('jsonwebtoken');
 
 router.get('/login', function(req, res, next) {
   res.render('users/login');
@@ -20,7 +22,17 @@ router.post('/login', function(req, res, next) {
       res.render('error', { message: 'No valid user', error: {title: 'User not recognised', message: ''} });
       return;
     } 
-      res.redirect('/books');
+      const token = jwt.sign({ 
+        user: {
+          username: user.username
+        }
+      },
+      // Your secret, e.g. here set by environment variable
+      process.env.AUTH_SECRET);
+      
+      res.cookie('token', token);
+
+      res.redirect('/quiz/quiz');
   }
 
   userService.validateLogin(req.body, onSuccess)
