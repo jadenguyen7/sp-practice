@@ -30,8 +30,10 @@ Open SQL workbench and ensure you can create a new database (choose or add an ex
 MYSQL_USER="<MySQL_username>"
 MYSQL_PASSWORD="<MySQL_password>"
 ```
+In the terminal run `node db` to check that it has connected to the database.
 
 On MySQL Workbench, click on the database icon - “Create a new schema” at the top and make the schema name `quiz-manager`.
+
 
 ### IDE
 I have used Visual Studio Code as my IDE but you can use the IDE you feel most comfortable with.

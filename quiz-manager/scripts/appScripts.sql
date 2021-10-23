@@ -43,7 +43,7 @@ CREATE TABLE `quiz-manager-test`.`answers` (
   `correct` BOOLEAN,
   `questionid` INT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`questionid`) REFERENCES `quiz-manager-test`.`questions` (`id`));
+  FOREIGN KEY (`questionid`) REFERENCES `quiz-manager-test`.`questions` (`id`) ON DELETE CASCADE);
 
 INSERT INTO `quiz-manager-test`.`answers`
 (`id`,

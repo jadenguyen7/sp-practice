@@ -22,7 +22,7 @@ router.get("/", async (req, res, next) => {
 //   userService.createUser(req.body, onSuccess)
 // });
 
-// users/log
+// users/login
 router.post('/login', function(req, res, next) {
   function onSuccess(success, user) {
     if (!success) {
@@ -39,7 +39,7 @@ router.post('/login', function(req, res, next) {
       
       res.cookie('token', token);
 
-      res.redirect('/quiz/quiz');
+      res.redirect('/quiz');
   }
 
   userService.validateLogin(req.body, onSuccess)
